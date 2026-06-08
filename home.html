@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이렐리아 가이드 — 홈</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      body {
+        margin: 0;
+        background-color: #0f1115;
+      }
+
+      .hero {
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background:
+          linear-gradient(
+            to bottom,
+            rgba(0, 0, 0, 0.1) 0%,
+            rgba(0, 0, 0, 0.3) 50%,
+            rgba(15, 17, 21, 0.85) 85%,
+            #0f1115 100%
+          ),
+          url("불멸이배경.png");
+        background-size: cover;
+        background-position: center;
+      }
+
+      .hero-content {
+        text-align: center;
+        color: #d4af37;
+      }
+
+      .hero-content h3 {
+        font-size: 13px;
+        letter-spacing: 0.4em;
+        color: #888;
+        margin-bottom: 16px;
+        text-transform: uppercase;
+      }
+
+      .hero-content h1 {
+        font-size: 80px;
+        font-weight: 900;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+        text-shadow: 0 0 40px rgba(201, 168, 76, 0.4);
+      }
+
+      .hero-content .hero-sub {
+        font-size: 16px;
+        color: #ccc;
+        letter-spacing: 0.15em;
+        margin-bottom: 10px;
+      }
+
+      .hero-content .hero-quote {
+        font-size: 13px;
+        color: #666;
+        font-style: italic;
+        letter-spacing: 0.05em;
+      }
+
+      main {
+        color: aliceblue;
+        max-width: 800px;
+        margin: 80px auto;
+        padding: 0 24px;
+      }
+
+      main h2 {
+        color: #d4af37;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        font-size: 13px;
+        border-bottom: 1px solid #333;
+        padding-bottom: 12px;
+        margin-bottom: 32px;
+      }
+
+      main ol {
+        padding-left: 0;
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 0;
+      }
+
+      main ol li {
+        font-size: 18px;
+        font-weight: 500;
+        padding: 20px 0;
+        border-bottom: 1px solid #1e1e1e;
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+
+      main ol li a {
+        color: #f0eef8;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+
+      main ol li a:hover {
+        color: #d4af37;
+      }
+
+      main ol li p {
+        font-size: 13px;
+        color: #555;
+        font-weight: 400;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">IRELIA</a>
+        <div class="nav-links">
+          <a href="home.html">홈</a>
+          <a href="skill.html">스킬</a>
+          <a href="build.html">빌드</a>
+          <a href="counter.html">상성표</a>
+          <a href="skin.html">스킨</a>
+        </div>
+        <span class="nav-user"></span>
+      </div>
+    </nav>
+
+    <header class="hero">
+      <div class="hero-content">
+        <h3>Wild Rift · Top Lane</h3>
+        <h1>IRELIA</h1>
+        <p class="hero-sub">칼날 무희, 이렐리아</p>
+        <p class="hero-quote">"아이오니아가 부른다!"</p>
+      </div>
+    </header>
+
+    <main>
+      <h2>가이드 목차</h2>
+      <ol>
+        <li>
+          <a href="skill.html">스킬 소개</a>
+          <p>Q / W / E / R 스킬 설명과 쿨타임, 마나 비용을 확인하세요.</p>
+        </li>
+        <li>
+          <a href="build.html">추천 빌드</a>
+          <p>기본 · 한타 · 사이드 상황별 아이템과 룬 조합을 소개합니다.</p>
+        </li>
+        <li>
+          <a href="counter.html">상성표</a>
+          <p>유리한 상대와 불리한 상대를 파악하고 전략을 세우세요.</p>
+        </li>
+        <li>
+          <a href="skin.html">스킨 갤러리</a>
+          <p>이렐리아의 9가지 스킨을 슬라이더로 감상하세요.</p>
+        </li>
+      </ol>
+    </main>
+
+    <footer>
+      <p>@2026 IRELIA GUIDE by Lee Jin Mo</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+  </body>
+</html>

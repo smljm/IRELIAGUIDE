@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>이렐리아 가이드 — 상성표</title>
+    <link rel="stylesheet" href="style.css" />
+    <style>
+      .modal-wrap {
+        display: none;
+      }
+
+      .modal-wrap.open {
+        display: flex;
+      }
+    </style>
+  </head>
+  <body class="page-bg">
+    <nav>
+      <div class="nav-inner">
+        <a href="index.html" class="nav-logo">IRELIA</a>
+        <div class="nav-links">
+          <a href="home.html">홈</a>
+          <a href="skill.html">스킬</a>
+          <a href="build.html">빌드</a>
+          <a href="counter.html" class="active">상성표</a>
+          <a href="skin.html">스킨</a>
+        </div>
+        <span class="nav-user"></span>
+      </div>
+    </nav>
+
+    <main>
+      <h1>상성표</h1>
+      <p>챔피언 카드를 클릭하면 상세 이유를 볼 수 있습니다</p>
+
+      <section>
+        <h2>유리한 상대</h2>
+        <div class="champ-list">
+          <div
+            class="champ-card"
+            data-name="가렌"
+            data-type="good"
+            data-desc="가렌은 돌진기가 없어 이렐리아의 Q를 막을 수 없습니다."
+          >
+            <img src="가렌.jpg" alt="가렌" />
+            <p>가렌</p>
+          </div>
+          <div
+            class="champ-card"
+            data-name="말파이트"
+            data-type="good"
+            data-desc="말파이트는 물리 피해에 취약하고 이동 속도가 느려 이렐리아가 유리합니다."
+          >
+            <img src="말파이트.jpg" alt="말파이트" />
+            <p>말파이트</p>
+          </div>
+        </div>
+      </section>
+
+      <section>
+        <h2>불리한 상대</h2>
+        <div class="champ-list">
+          <div
+            class="champ-card"
+            data-name="피오라"
+            data-type="bad"
+            data-desc="피오라는 W로 이렐리아의 E 기절을 무력화할 수 있습니다."
+          >
+            <img src="피오라.jpg" alt="피오라" />
+            <p>피오라</p>
+          </div>
+          <div
+            class="champ-card"
+            data-name="제이스"
+            data-type="bad"
+            data-desc="제이스는 원거리 모드로 이렐리아가 접근하기 전에 지속적으로 포킹할 수 있습니다."
+          >
+            <img src="제이스.jpg" alt="제이스" />
+            <p>제이스</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div id="modal-wrap" class="modal-wrap">
+      <div class="modal-box">
+        <button id="modal-close">✕</button>
+        <h2 id="modal-name"></h2>
+        <p id="modal-type"></p>
+        <p id="modal-desc"></p>
+      </div>
+    </div>
+
+    <footer>
+      <p>@2026 IRELIA GUIDE by Lee Jin Mo</p>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/counter.js"></script>
+  </body>
+</html>
