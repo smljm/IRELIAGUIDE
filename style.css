@@ -8,15 +8,11 @@ html {
   scroll-behavior: smooth;
 }
 
-/* ===== 전체 페이지 ===== */
-
 body {
   margin: 0;
   padding-top: 56px;
   background-color: #0f1115;
 }
-
-/* ===== 배경 이미지 ===== */
 
 .page-bg::before {
   content: "";
@@ -40,8 +36,6 @@ body {
   filter: blur(3px);
   z-index: -2;
 }
-
-/* ===== 네비게이션 ===== */
 
 nav {
   position: fixed;
@@ -127,8 +121,6 @@ nav {
   border-left: 1px solid #333;
 }
 
-/* ===== 스킨 페이지 ===== */
-
 .skin-wrap {
   width: 90%;
   max-width: 1000px;
@@ -136,8 +128,6 @@ nav {
   margin: 50px auto;
   text-align: center;
 }
-
-/* ===== 푸터 ===== */
 
 footer {
   margin-top: 80px;
@@ -149,25 +139,4 @@ footer {
   color: #666;
   background: #0f1115;
   border-top: 1px solid #1e1e1e;
-}
-.page-bg::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-
-  background:
-    linear-gradient(
-      to bottom,
-      rgba(0, 0, 0, 0.2) 0%,
-      rgba(0, 0, 0, 0.45) 50%,
-      rgba(15, 17, 21, 0.9) 100%
-    ),
-    url("그냥이렐리아.jpg");
-
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-
-  filter: blur(4px);
-  z-index: -2;
 }
