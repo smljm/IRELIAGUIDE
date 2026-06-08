@@ -140,3 +140,8 @@ footer {
   background: #0f1115;
   border-top: 1px solid #1e1e1e;
 }
+#skin-img {
+  width: 100%;
+  display: block;
+  transition: opacity 0.3s ease;
+}
