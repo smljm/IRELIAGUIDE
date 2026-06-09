@@ -15,6 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 
   document.addEventListener("keydown", (e) => {
+    // 한글 IME 조합 중이면 무시
+    if (e.isComposing) return;
+
     const keys = { q: "q", w: "w", e: "e", r: "r" };
     const key = e.key.toLowerCase();
     if (keys[key]) {
