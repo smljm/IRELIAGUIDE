@@ -1,4 +1,4 @@
-* {
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -129,7 +129,6 @@ nav {
   text-align: center;
 }
 
-/* 푸터 고정 + 오버레이 */
 footer {
   position: fixed;
   bottom: 0;
@@ -148,7 +147,6 @@ footer {
   border-top: none;
 }
 
-/* 푸터 위 그라데이션 */
 footer::before {
   content: "";
   position: fixed;
@@ -172,7 +170,7 @@ footer::before {
   display: block;
   transition: opacity 0.3s ease;
 }
-/* 콤보 응용 상세 */
+
 .combo-detail {
   display: flex;
   flex-direction: column;
@@ -216,7 +214,7 @@ footer::before {
 .skill-sec.active {
   display: flex !important;
 }
-/* 페이지 타이틀 */
+
 main h1 {
   font-size: 28px;
   font-weight: 900;
@@ -238,7 +236,6 @@ main {
   padding: 48px 24px 80px;
 }
 
-/* 탭 버튼 */
 .tab-wrap {
   display: flex;
   justify-content: center;
@@ -292,7 +289,6 @@ main {
   color: #c9a84c;
 }
 
-/* 스킬 섹션 레이아웃 */
 .skill-wrap {
   display: flex;
   gap: 40px;
@@ -311,7 +307,6 @@ main {
   object-fit: cover;
 }
 
-/* 스킬 텍스트 */
 .skill-text {
   flex: 1;
   display: flex;
@@ -347,7 +342,6 @@ main {
   color: #c9a84c;
 }
 
-/* 팁 박스 */
 .tip {
   background: rgba(201, 168, 76, 0.04);
   border: 1px solid #2a2a2a;
@@ -376,7 +370,6 @@ main {
   margin-bottom: 0;
 }
 
-/* 콤보 박스 */
 .combo {
   background: #141414;
   border: 1px solid #2a2a2a;
@@ -430,7 +423,6 @@ body {
   color: white;
 }
 
-/* 스킨 페이지 전용 배경 */
 .skin-page::before {
   content: "";
   position: fixed;
@@ -514,4 +506,4 @@ body {
 main {
   padding: 40px 0;
   text-align: center;
-}
+} */
