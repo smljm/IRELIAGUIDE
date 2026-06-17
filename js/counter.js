@@ -13,8 +13,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const desc = card.dataset.desc;
 
       modalName.textContent = name;
-      modalType.textContent =
-        type === "good" ? "✦ 유리한 상대" : "✦ 불리한 상대";
+      modalType.textContent = type === "good" ? "유리한 상대" : "불리한 상대";
       modalType.className = "modal-type " + (type === "good" ? "good" : "bad");
       modalDesc.textContent = desc;
 
