@@ -812,3 +812,14 @@ main p {
   color: #ff5a5a;
   font-size: 14px;
 }
+/*스펠아ㅡ이콘작게*/
+.spell-icon {
+  width: 32px !important; /* 원하는 크기로 조절 가능 */
+  height: 32px !important;
+  border-radius: 4px;
+}
+
+/*스펠간격*/
+.spell-list {
+  gap: 6px !important;
+}
