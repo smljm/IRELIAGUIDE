@@ -37,3 +37,8 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === overlay) closeModal();
   });
 
+  //ESC시닫기
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
+  });
+});

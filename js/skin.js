@@ -1,4 +1,3 @@
-/* 이전/다음 버튼 및 도트 인디케이터를 활용한 스킨 슬라이더 스크립트 */
 document.addEventListener("DOMContentLoaded", () => {
   const img = document.getElementById("skin-img");
   const nameEl = document.getElementById("skin-name");
@@ -7,9 +6,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const prevBtn = document.getElementById("prev-btn");
   const nextBtn = document.getElementById("next-btn");
 
-  let current = 0; // 현재 표시 중인 스킨 배열 인덱스
+  let current = 0; //스킨배열인덱스
 
-  // 스킨 목록 데이터 데이터셋
+  //스킨목록
   const skins = [
     { name: "연꽃 수도회 이렐리아", src: "연꽃수도회이렐리아.jpg" },
     { name: "서리검 이렐리아", src: "서리검이렐리아.jpg" },
@@ -25,9 +24,9 @@ document.addEventListener("DOMContentLoaded", () => {
     },
   ];
 
-  // 슬라이더 상태 업데이트 함수
+  //슬라이드상태업데이트
   const update = () => {
-    // 이미지 변경 시 페이드인 효과 연출
+    //이미지변동시페이드인
     img.style.opacity = "0";
     setTimeout(() => {
       img.src = skins[current].src;
@@ -35,29 +34,29 @@ document.addEventListener("DOMContentLoaded", () => {
       img.style.opacity = "1";
     }, 200);
 
-    // 하단 텍스트 및 페이지 번호 갱신
+    //하단텍스트,번호변경
     nameEl.textContent = skins[current].name;
     counterEl.textContent = current + 1 + " / " + skins.length;
 
-    // 현재 선택된 도트 인디케이터 활성화 처리
+    //점활성
     dots.forEach((dot, i) => {
       dot.classList.toggle("active", i === current);
     });
   };
 
-  // 이전 버튼 클릭 (처음에서 누르면 마지막 스킨으로 순환)
+  //이전버튼
   prevBtn.addEventListener("click", () => {
     current = (current - 1 + skins.length) % skins.length;
     update();
   });
 
-  // 다음 버튼 클릭 (마지막에서 누르면 처음 스킨으로 순환)
+  //다음버튼
   nextBtn.addEventListener("click", () => {
     current = (current + 1) % skins.length;
     update();
   });
 
-  // 개별 도트 인디케이터 클릭 이벤트 바인딩
+  //이벤트바인딩
   dots.forEach((dot, i) => {
     dot.addEventListener("click", () => {
       current = i;
@@ -65,6 +64,6 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
-  // 초기 페이지 진입 시 최초 1회 실행
+  //초긴페이지진입시실행
   update();
 });
