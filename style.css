@@ -787,3 +787,65 @@ body::before {
   filter: blur(3px);
   z-index: -2;
 }
+/* ====== 로그인 페이지 ====== */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.8)),
+    url("배경이미지.jpg") center/cover no-repeat;
+}
+
+main {
+  text-align: center;
+}
+
+h1 {
+  font-size: 48px;
+  font-weight: 900;
+  color: #c9a84c;
+  text-shadow: 0 0 10px rgba(201, 168, 76, 0.5);
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 14px;
+  color: #aaa;
+}
+
+input {
+  display: block;
+  width: 240px;
+  margin: 20px auto;
+  padding: 10px;
+  text-align: center;
+  background: rgba(255, 255, 255, 0.1);
+  border: none;
+  border-radius: 5px;
+  color: #fff;
+}
+
+input::placeholder {
+  color: #888;
+}
+
+button {
+  padding: 10px 30px;
+  background: #c9a84c;
+  border: none;
+  border-radius: 5px;
+  color: #111;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+button:hover {
+  background: #a68a3e;
+}
+
+#error-msg {
+  color: #ff4848;
+  margin-top: 20px;
+}
