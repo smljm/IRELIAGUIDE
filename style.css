@@ -648,3 +648,118 @@ main ol li p {
   font-size: 13px;
   color: #f0eef8;
 }
+/* 상성표 */
+
+.champ-list {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+  margin-top: 24px;
+}
+
+.champ-card {
+  width: 140px;
+  background: #181a20;
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.champ-card:hover {
+  transform: translateY(-4px);
+  border-color: #c9a84c;
+  box-shadow: 0 0 20px rgba(201, 168, 76, 0.2);
+}
+
+.champ-card img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+}
+
+.champ-card p {
+  padding: 12px;
+  color: #f0eef8;
+  font-weight: 700;
+  font-size: 14px;
+}
+
+/* 모달 */
+
+.modal-wrap {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.75);
+
+  display: none;
+  justify-content: center;
+  align-items: center;
+
+  z-index: 9999;
+}
+
+.modal-wrap.open {
+  display: flex;
+}
+
+.modal-box {
+  width: 90%;
+  max-width: 500px;
+
+  background: #181a20;
+  border: 1px solid #c9a84c;
+  border-radius: 12px;
+
+  padding: 32px;
+  position: relative;
+
+  box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+}
+
+#modal-close {
+  position: absolute;
+  top: 12px;
+  right: 16px;
+
+  background: none;
+  border: none;
+
+  color: #888;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+#modal-close:hover {
+  color: #c9a84c;
+}
+
+#modal-name {
+  color: #c9a84c;
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+.modal-type {
+  font-size: 13px;
+  font-weight: 700;
+  margin-bottom: 18px;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.modal-type.good {
+  color: #4caf50;
+}
+
+.modal-type.bad {
+  color: #f44336;
+}
+
+#modal-desc {
+  color: #ccc;
+  line-height: 1.8;
+  font-size: 14px;
+}
