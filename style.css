@@ -862,3 +862,67 @@ main ol li p {
     flex-direction: column;
   }
 }
+/* build page */
+
+.build-page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.build-page h1 {
+  text-align: center;
+  color: #c9a84c;
+  margin-bottom: 30px;
+}
+
+.build-box {
+  background: rgba(20, 20, 20, 0.9);
+  border: 1px solid #2a2a2a;
+  border-radius: 10px;
+  padding: 20px;
+  margin-bottom: 24px;
+}
+
+.build-box h2 {
+  color: #c9a84c;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.build-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.build-row:last-child {
+  margin-bottom: 0;
+}
+
+.build-row span {
+  color: #aaa;
+  font-size: 14px;
+}
+
+.icon-list {
+  display: flex;
+  gap: 8px;
+}
+
+.icon-list img,
+.rune-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 6px;
+  border: 1px solid #333;
+  object-fit: cover;
+  background: #111;
+}
+
+.icon-list img:hover,
+.rune-icon:hover {
+  border-color: #c9a84c;
+  transform: scale(1.05);
+  transition: 0.2s;
+}
