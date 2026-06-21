@@ -899,3 +899,19 @@ main ol li p {
   transform: scale(1.05);
   transition: 0.2s;
 }
+.icon-list img,
+.rune-icon {
+  width: 56px;
+  height: 56px;
+
+  object-fit: cover;
+
+  border: 1px solid #333;
+  border-radius: 6px;
+
+  background: #111;
+
+  flex-shrink: 0;
+
+  transition: all 0.2s;
+}
