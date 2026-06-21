@@ -1,46 +1,35 @@
-/* 챔피언 카드를 클릭하면 상세 상성 정보를 모달 창으로 띄워주는 스크립트 */
 document.addEventListener("DOMContentLoaded", () => {
-  const champCards = document.querySelectorAll(".champ-card");
-  const modalWrap = document.getElementById("modal-wrap");
-  const modalClose = document.getElementById("modal-close");
-
+  const cards = document.querySelectorAll(".champ-card");
+  const overlay = document.getElementById("modal-wrap");
   const modalName = document.getElementById("modal-name");
   const modalType = document.getElementById("modal-type");
   const modalDesc = document.getElementById("modal-desc");
+  const closeBtn = document.getElementById("modal-close");
 
-  // 챔피언 카드 클릭 시 모달 열기 및 데이터 주입
-  champCards.forEach((card) => {
+  cards.forEach((card) => {
     card.addEventListener("click", () => {
-      const name = card.getAttribute("data-name");
-      const type = card.getAttribute("data-type");
-      const desc = card.getAttribute("data-desc");
+      const name = card.dataset.name;
+      const type = card.dataset.type;
+      const desc = card.dataset.desc;
 
       modalName.textContent = name;
+      modalType.textContent = type === "good" ? "유리한 상대" : "불리한 상대";
+      modalType.className = "modal-type " + (type === "good" ? "good" : "bad");
       modalDesc.textContent = desc;
 
-      // 유리함(good) / 불리함(bad) 유형에 따라 텍스트 및 스타일 변경
-      modalType.className = "modal-type"; // 클래스 초기화
-      if (type === "good") {
-        modalType.textContent = "유리한 상대";
-        modalType.classList.add("good");
-      } else if (type === "bad") {
-        modalType.textContent = "불리한 상대";
-        modalType.classList.add("bad");
-      }
-
-      modalWrap.classList.add("open");
+      overlay.classList.add("open");
     });
   });
 
-  // 닫기 버튼 클릭 시 모달 닫기
-  modalClose.addEventListener("click", () => {
-    modalWrap.classList.remove("open");
+  const closeModal = () => overlay.classList.remove("open");
+
+  closeBtn.addEventListener("click", closeModal);
+
+  overlay.addEventListener("click", (e) => {
+    if (e.target === overlay) closeModal();
   });
 
-  // 모달 바깥 어두운 배경 클릭 시 모달 닫기
-  modalWrap.addEventListener("click", (e) => {
-    if (e.target === modalWrap) {
-      modalWrap.classList.remove("open");
-    }
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeModal();
   });
 });

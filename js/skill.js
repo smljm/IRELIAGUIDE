@@ -1,23 +1,27 @@
-/* P/Q/W/E/R 버튼 클릭 시 해당하는 스킬 설명 섹션을 보여주는 스크립트 */
 document.addEventListener("DOMContentLoaded", () => {
-  const tabButtons = document.querySelectorAll(".tab-btn");
-  const skillSections = document.querySelectorAll(".skill-sec");
+  const tabs = document.querySelectorAll(".tab-btn");
+  const sections = document.querySelectorAll(".skill-sec");
 
-  tabButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      // 현재 활성화된 버튼 및 섹션의 active 클래스 제거
-      tabButtons.forEach((btn) => btn.classList.remove("active"));
-      skillSections.forEach((sec) => sec.classList.remove("active"));
+  tabs.forEach((tab) => {
+    tab.addEventListener("click", () => {
+      const target = tab.dataset.skill;
 
-      // 클릭한 버튼 활성화
-      button.classList.add("active");
+      tabs.forEach((t) => t.classList.remove("active"));
+      sections.forEach((s) => s.classList.remove("active"));
 
-      // 버튼의 data-skill 속성값과 일치하는 ID를 가진 섹션 활성화
-      const skillId = button.getAttribute("data-skill");
-      const targetSection = document.getElementById(`skill-${skillId}`);
-      if (targetSection) {
-        targetSection.classList.add("active");
-      }
+      tab.classList.add("active");
+      document.getElementById("skill-" + target).classList.add("active");
     });
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (e.isComposing) return;
+
+    const keys = { p: "p", q: "q", w: "w", e: "e", r: "r" };
+    const key = e.key.toLowerCase();
+    if (keys[key]) {
+      const tab = document.querySelector(`.tab-btn[data-skill="${key}"]`);
+      if (tab) tab.click();
+    }
   });
 });
