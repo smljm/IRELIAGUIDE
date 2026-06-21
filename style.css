@@ -1,4 +1,4 @@
-/* 기본 초기화 및 전역 설정 */
+/*전체설정*/
 * {
   margin: 0;
   padding: 0;
@@ -11,13 +11,13 @@ html {
 
 body {
   margin: 0;
-  padding-top: 56px; /* 고정 네비게이션 바 높이만큼 여백 확보 */
+  padding-top: 56px; /*여백확보*/
   background-color: #0f1115;
   color: white;
   font-family: "Pretendard", sans-serif;
 }
 
-/* 전체 페이지 블러 배경 이미지 */
+/*전체배경사진*/
 .page-bg::before {
   content: "";
   position: fixed;
@@ -38,7 +38,7 @@ body {
   z-index: -2;
 }
 
-/* 상단 고정 네비게이션 바 */
+/*네비바*/
 nav {
   position: fixed;
   top: 0;
@@ -59,7 +59,7 @@ nav {
   align-items: center;
 }
 
-/* 로고 (좌측 정렬) */
+/*로고*/
 .nav-logo {
   margin-right: auto;
   font-size: 18px;
@@ -70,7 +70,7 @@ nav {
   color: #c9a84c;
 }
 
-/* 메뉴 링크 */
+/*메뉴하이퍼링크*/
 .nav-links {
   display: flex;
   align-items: center;
@@ -103,7 +103,7 @@ nav {
   color: #c9a84c;
 }
 
-/* 유저 정보 영역 */
+/*소환사명*/
 .nav-user {
   margin-left: 32px;
   padding-left: 32px;
@@ -114,7 +114,7 @@ nav {
   border-left: 1px solid #333;
 }
 
-/* 메인 레이아웃 및 하단 푸터 */
+/*메인/하단푸터*/
 main {
   max-width: 1000px;
   margin: 0 auto;
@@ -151,7 +151,7 @@ footer {
   border-top: none;
 }
 
-/* 스크롤 시 하단 콘텐츠가 자연스럽게 어두워지도록 페이드 효과 추가 */
+/*스크롤시페이드*/
 footer::before {
   content: "";
   position: fixed;
@@ -169,7 +169,7 @@ footer::before {
   pointer-events: none;
 }
 
-/* 스킬 변경 탭 버튼 */
+/*스킬버튼*/
 .tab-wrap {
   display: flex;
   justify-content: center;
@@ -220,7 +220,7 @@ footer::before {
   color: #c9a84c;
 }
 
-/* 스킬 세부 정보 영역 토글 (JS 연동용) */
+/*스킬정보*/
 .skill-sec {
   display: none !important;
 }
@@ -278,7 +278,7 @@ footer::before {
   color: #c9a84c;
 }
 
-/* 활용 팁 상자 */
+/*활용팁*/
 .tip {
   background: rgba(201, 168, 76, 0.04);
   border: 1px solid #2a2a2a;
@@ -307,7 +307,7 @@ footer::before {
   margin-bottom: 0;
 }
 
-/* 스킬 연계 / 콤보 가이드 */
+/*콤보*/
 .combo {
   background: #141414;
   border: 1px solid #2a2a2a;
@@ -338,7 +338,7 @@ footer::before {
   position: relative;
 }
 
-/* 리스트 아이템 앞의 화살표 기호 */
+/*화살표*/
 .combo li::before {
   content: "▸";
   position: absolute;
@@ -346,7 +346,7 @@ footer::before {
   color: #c9a84c;
 }
 
-/* 상세 콤보 리스트 */
+/*상세콤보*/
 .combo-detail {
   display: flex;
   flex-direction: column;
@@ -380,7 +380,7 @@ footer::before {
   margin-bottom: 0 !important;
 }
 
-/* 스킨 갤러리 페이지 */
+/*스킨갤러리*/
 .skin-page::before {
   content: "";
   position: fixed;
@@ -389,7 +389,7 @@ footer::before {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: blur(4px) brightness(0.35); /* 메인 이미지를 돋보이게 배경을 어둡고 흐리게 조정 */
+  filter: blur(4px) brightness(0.35); /*배경흐리게*/
   z-index: -1;
 }
 
@@ -409,7 +409,7 @@ footer::before {
   transition: opacity 0.2s ease;
 }
 
-/* 스킨 슬라이드 컨트롤러 (이전/다음 버튼 및 이름) */
+/*이전다음버튼*/
 .skin-ctrl {
   display: flex;
   justify-content: space-between;
@@ -442,7 +442,7 @@ footer::before {
   margin-top: 5px;
 }
 
-/* 인디케이터 도트 */
+/*점*/
 .dot-list {
   display: flex;
   justify-content: center;
@@ -463,7 +463,7 @@ footer::before {
   background-color: #d4af37;
 }
 
-/* 메인 랜딩 화면 히어로 영역 */
+/*히어로영역*/
 .hero {
   height: 100vh;
   display: flex;
@@ -518,7 +518,7 @@ footer::before {
   letter-spacing: 0.05em;
 }
 
-/* 상성 리스트 및 매치업 정보 */
+/*상성표*/
 main h2 {
   color: #d4af37;
   letter-spacing: 0.1em;
@@ -563,7 +563,7 @@ main ol li p {
   font-weight: 400;
 }
 
-/* 챔피언 목록 그리드 */
+/*챔피언목록*/
 .champ-list {
   display: flex;
   justify-content: center;
@@ -601,7 +601,7 @@ main ol li p {
   font-size: 14px;
 }
 
-/* 상성 상세 팝업 모달 */
+/*팝업*/
 .modal-wrap {
   position: fixed;
   inset: 0;
@@ -648,7 +648,7 @@ main ol li p {
   margin-bottom: 10px;
 }
 
-/* 유리함/불리함 상태별 색상 구분 */
+/*유불리색깔*/
 .modal-type {
   font-size: 13px;
   font-weight: 700;
@@ -670,7 +670,7 @@ main ol li p {
   font-size: 14px;
 }
 
-/* 아이템 및 룬 빌드 추천 페이지 */
+/*빌드페이지*/
 .build-page {
   max-width: 1000px;
   margin: 0 auto;
@@ -720,7 +720,7 @@ main ol li p {
   gap: 10px;
 }
 
-/* 아이콘 이미지 설정 (호버 시 약간 상승 효과) */
+/*아이콘설정*/
 .icon-list img,
 .rune-icon {
   width: 64px;
@@ -755,7 +755,7 @@ main ol li p {
   margin-top: 10px;
 }
 
-/* 로그인 대기 / 소환사 이름 입력 페이지 */
+/*로그인페이지*/
 main h1 {
   color: #c9a84c;
   font-size: 64px;
@@ -805,7 +805,7 @@ main p {
   background: #d9b85b;
 }
 
-/* 유효성 검사 오류 메시지 영역 */
+/*오류메세지*/
 #error-msg {
   min-height: 24px;
   margin-top: 12px;
