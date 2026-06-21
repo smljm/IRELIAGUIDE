@@ -763,3 +763,102 @@ main ol li p {
   line-height: 1.8;
   font-size: 14px;
 }
+.build-page h1 {
+  text-align: center;
+
+  margin-bottom: 12px;
+}
+
+.build-sub {
+  text-align: center;
+
+  color: #888;
+
+  margin-bottom: 50px;
+
+  font-size: 14px;
+}
+
+.build-case {
+  background: #181a20;
+
+  border: 1px solid #2a2a2a;
+
+  border-radius: 12px;
+
+  padding: 32px;
+
+  margin-bottom: 32px;
+
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.2);
+}
+
+.build-case h2 {
+  color: #c9a84c;
+
+  font-size: 24px;
+
+  margin-bottom: 12px;
+}
+
+.build-desc {
+  color: #aaa;
+
+  line-height: 1.7;
+
+  margin-bottom: 24px;
+}
+
+.build-area {
+  display: flex;
+
+  gap: 24px;
+
+  flex-wrap: wrap;
+}
+
+.build-box {
+  flex: 1;
+
+  min-width: 280px;
+
+  background: #141414;
+
+  border: 1px solid #2a2a2a;
+
+  border-radius: 10px;
+
+  padding: 20px;
+}
+
+.build-box h3 {
+  color: #c9a84c;
+
+  font-size: 16px;
+
+  margin-bottom: 16px;
+}
+
+.build-box img {
+  width: 100%;
+
+  border-radius: 8px;
+
+  border: 1px solid #333;
+
+  background: #0f1115;
+
+  min-height: 180px;
+
+  object-fit: cover;
+}
+
+@media (max-width: 768px) {
+  .build-case {
+    padding: 24px 20px;
+  }
+
+  .build-area {
+    flex-direction: column;
+  }
+}
