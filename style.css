@@ -1,3 +1,4 @@
+/* 기본 초기화 및 전역 설정 */
 * {
   margin: 0;
   padding: 0;
@@ -10,15 +11,17 @@ html {
 
 body {
   margin: 0;
-  padding-top: 56px;
+  padding-top: 56px; /* 고정 네비게이션 바 높이만큼 여백 확보 */
   background-color: #0f1115;
+  color: white;
+  font-family: "Pretendard", sans-serif;
 }
 
+/* 전체 페이지 블러 배경 이미지 */
 .page-bg::before {
   content: "";
   position: fixed;
   inset: 0;
-
   background:
     linear-gradient(
       to bottom,
@@ -28,52 +31,46 @@ body {
       #0f1115 100%
     ),
     url("불멸이배경.png");
-
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-
   filter: blur(3px);
   z-index: -2;
 }
 
+/* 상단 고정 네비게이션 바 */
 nav {
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-
   z-index: 100;
   height: 56px;
-
   background: #0f1115;
   border-bottom: 1px solid #c9a84c;
-
   display: flex;
   align-items: center;
-
   padding: 0 32px;
 }
 
 .nav-inner {
   width: 100%;
-
   display: flex;
   align-items: center;
 }
 
+/* 로고 (좌측 정렬) */
 .nav-logo {
   margin-right: auto;
-
   font-size: 18px;
   font-weight: 900;
   letter-spacing: 0.2em;
   text-transform: uppercase;
   text-decoration: none;
-
   color: #c9a84c;
 }
 
+/* 메뉴 링크 */
 .nav-links {
   display: flex;
   align-items: center;
@@ -81,16 +78,13 @@ nav {
 
 .nav-links a {
   padding: 6px 18px;
-
   font-size: 13px;
   font-weight: 600;
   letter-spacing: 0.1em;
   text-transform: uppercase;
   text-decoration: none;
-
   color: #888;
   border-left: 1px solid #222;
-
   transition:
     color 0.2s,
     background 0.2s;
@@ -109,110 +103,22 @@ nav {
   color: #c9a84c;
 }
 
+/* 유저 정보 영역 */
 .nav-user {
   margin-left: 32px;
   padding-left: 32px;
-
   font-size: 12px;
   font-weight: 600;
   letter-spacing: 0.08em;
-
   color: #c9a84c;
   border-left: 1px solid #333;
 }
 
-.skin-wrap {
-  width: 90%;
+/* 메인 레이아웃 및 하단 푸터 */
+main {
   max-width: 1000px;
-
-  margin: 50px auto;
-  text-align: center;
-}
-
-footer {
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 50;
-
-  margin-top: 0;
-  padding: 16px 24px;
-
-  text-align: center;
-  font-size: 12px;
-
-  color: #666;
-  background: transparent;
-  border-top: none;
-}
-
-footer::before {
-  content: "";
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 120px;
-  z-index: -1;
-
-  background: linear-gradient(
-    to bottom,
-    rgba(15, 17, 21, 0) 0%,
-    rgba(15, 17, 21, 0.85) 85%,
-    #0f1115 100%
-  );
-
-  pointer-events: none;
-}
-#skin-img {
-  width: 100%;
-  display: block;
-  transition: opacity 0.3s ease;
-}
-
-.combo-detail {
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  margin-top: 16px;
-  padding-top: 16px;
-  border-top: 1px solid #2a2a2a;
-}
-
-.combo-item {
-  padding: 12px 14px;
-  background: #1a1a1a;
-  border-radius: 6px;
-  border-left: 2px solid #c9a84c;
-}
-
-.combo-title {
-  font-size: 13px;
-  font-weight: 700;
-  color: #c9a84c !important;
-  margin-bottom: 6px !important;
-  font-style: normal !important;
-  border-left: none !important;
-  padding-left: 0 !important;
-}
-
-.combo-item p:last-child {
-  font-size: 12px;
-  color: #888 !important;
-  line-height: 1.7;
-  margin-bottom: 0 !important;
-}
-.skill-sec {
-  display: none;
-}
-
-.skill-sec {
-  display: none !important;
-}
-
-.skill-sec.active {
-  display: flex !important;
+  margin: 0 auto;
+  padding: 48px 24px 80px;
 }
 
 main h1 {
@@ -230,12 +136,40 @@ main > div > p {
   margin-top: 8px;
 }
 
-main {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 48px 24px 80px;
+footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 50;
+  margin-top: 0;
+  padding: 16px 24px;
+  text-align: center;
+  font-size: 12px;
+  color: #666;
+  background: transparent;
+  border-top: none;
 }
 
+/* 스크롤 시 하단 콘텐츠가 자연스럽게 어두워지도록 페이드 효과 추가 */
+footer::before {
+  content: "";
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 120px;
+  z-index: -1;
+  background: linear-gradient(
+    to bottom,
+    rgba(15, 17, 21, 0) 0%,
+    rgba(15, 17, 21, 0.85) 85%,
+    #0f1115 100%
+  );
+  pointer-events: none;
+}
+
+/* 스킬 변경 탭 버튼 */
 .tab-wrap {
   display: flex;
   justify-content: center;
@@ -248,15 +182,12 @@ main {
   flex-direction: column;
   align-items: center;
   gap: 6px;
-
   padding: 12px 20px;
   min-width: 90px;
-
   background: #1a1a1a;
   border: 1px solid #2a2a2a;
   border-radius: 8px;
   cursor: pointer;
-
   transition: all 0.2s;
 }
 
@@ -289,14 +220,19 @@ main {
   color: #c9a84c;
 }
 
+/* 스킬 세부 정보 영역 토글 (JS 연동용) */
+.skill-sec {
+  display: none !important;
+}
+
+.skill-sec.active {
+  display: flex !important;
+}
+
 .skill-wrap {
   display: flex;
   gap: 40px;
   align-items: flex-start;
-}
-
-.skill-sec.active {
-  display: flex;
 }
 
 .skill-img {
@@ -342,6 +278,7 @@ main {
   color: #c9a84c;
 }
 
+/* 활용 팁 상자 */
 .tip {
   background: rgba(201, 168, 76, 0.04);
   border: 1px solid #2a2a2a;
@@ -370,6 +307,7 @@ main {
   margin-bottom: 0;
 }
 
+/* 스킬 연계 / 콤보 가이드 */
 .combo {
   background: #141414;
   border: 1px solid #2a2a2a;
@@ -400,6 +338,7 @@ main {
   position: relative;
 }
 
+/* 리스트 아이템 앞의 화살표 기호 */
 .combo li::before {
   content: "▸";
   position: absolute;
@@ -407,22 +346,41 @@ main {
   color: #c9a84c;
 }
 
-.modal-wrap {
-  display: none;
-}
-
-.modal-wrap.open {
+/* 상세 콤보 리스트 */
+.combo-detail {
   display: flex;
-}
-body {
-  background-color: white;
-}
-body {
-  margin: 0;
-  background-color: #0f1115;
-  color: white;
+  flex-direction: column;
+  gap: 12px;
+  margin-top: 16px;
+  padding-top: 16px;
+  border-top: 1px solid #2a2a2a;
 }
 
+.combo-item {
+  padding: 12px 14px;
+  background: #1a1a1a;
+  border-radius: 6px;
+  border-left: 2px solid #c9a84c;
+}
+
+.combo-title {
+  font-size: 13px;
+  font-weight: 700;
+  color: #c9a84c !important;
+  margin-bottom: 6px !important;
+  font-style: normal !important;
+  border-left: none !important;
+  padding-left: 0 !important;
+}
+
+.combo-item p:last-child {
+  font-size: 12px;
+  color: #888 !important;
+  line-height: 1.7;
+  margin-bottom: 0 !important;
+}
+
+/* 스킨 갤러리 페이지 */
 .skin-page::before {
   content: "";
   position: fixed;
@@ -431,7 +389,7 @@ body {
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  filter: blur(4px) brightness(0.35);
+  filter: blur(4px) brightness(0.35); /* 메인 이미지를 돋보이게 배경을 어둡고 흐리게 조정 */
   z-index: -1;
 }
 
@@ -451,6 +409,7 @@ body {
   transition: opacity 0.2s ease;
 }
 
+/* 스킨 슬라이드 컨트롤러 (이전/다음 버튼 및 이름) */
 .skin-ctrl {
   display: flex;
   justify-content: space-between;
@@ -483,6 +442,7 @@ body {
   margin-top: 5px;
 }
 
+/* 인디케이터 도트 */
 .dot-list {
   display: flex;
   justify-content: center;
@@ -503,15 +463,7 @@ body {
   background-color: #d4af37;
 }
 
-main {
-  padding: 40px 0;
-  text-align: center;
-}
-body {
-  margin: 0;
-  background-color: #0f1115;
-}
-
+/* 메인 랜딩 화면 히어로 영역 */
 .hero {
   height: 100vh;
   display: flex;
@@ -566,13 +518,7 @@ body {
   letter-spacing: 0.05em;
 }
 
-main {
-  color: aliceblue;
-  max-width: 800px;
-  margin: 80px auto;
-  padding: 0 24px;
-}
-
+/* 상성 리스트 및 매치업 정보 */
 main h2 {
   color: #d4af37;
   letter-spacing: 0.1em;
@@ -616,40 +562,8 @@ main ol li p {
   color: #555;
   font-weight: 400;
 }
-.champ-list {
-  display: flex;
-  justify-content: center;
-  gap: 24px;
-  margin-top: 24px;
-}
 
-.champ-card {
-  width: 120px;
-  text-align: center;
-  padding: 12px;
-  background: #1a1a1a;
-  border: 1px solid #333;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.champ-card:hover {
-  border-color: #c9a84c;
-}
-
-.champ-card img {
-  width: 100%;
-  height: auto;
-  border-radius: 8px;
-  margin-bottom: 8px;
-}
-
-.champ-card p {
-  font-size: 13px;
-  color: #f0eef8;
-}
-/* 상성표 */
-
+/* 챔피언 목록 그리드 */
 .champ-list {
   display: flex;
   justify-content: center;
@@ -687,17 +601,14 @@ main ol li p {
   font-size: 14px;
 }
 
-/* 모달 */
-
+/* 상성 상세 팝업 모달 */
 .modal-wrap {
   position: fixed;
   inset: 0;
   background: rgba(0, 0, 0, 0.75);
-
   display: none;
   justify-content: center;
   align-items: center;
-
   z-index: 9999;
 }
 
@@ -708,14 +619,11 @@ main ol li p {
 .modal-box {
   width: 90%;
   max-width: 500px;
-
   background: #181a20;
   border: 1px solid #c9a84c;
   border-radius: 12px;
-
   padding: 32px;
   position: relative;
-
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
 }
 
@@ -723,10 +631,8 @@ main ol li p {
   position: absolute;
   top: 12px;
   right: 16px;
-
   background: none;
   border: none;
-
   color: #888;
   font-size: 22px;
   cursor: pointer;
@@ -742,6 +648,7 @@ main ol li p {
   margin-bottom: 10px;
 }
 
+/* 유리함/불리함 상태별 색상 구분 */
 .modal-type {
   font-size: 13px;
   font-weight: 700;
@@ -753,7 +660,6 @@ main ol li p {
 .modal-type.good {
   color: #4caf50;
 }
-
 .modal-type.bad {
   color: #f44336;
 }
@@ -763,10 +669,8 @@ main ol li p {
   line-height: 1.8;
   font-size: 14px;
 }
-/* =========================
-   BUILD PAGE
-========================= */
 
+/* 아이템 및 룬 빌드 추천 페이지 */
 .build-page {
   max-width: 1000px;
   margin: 0 auto;
@@ -781,39 +685,29 @@ main ol li p {
   margin-bottom: 40px;
 }
 
-/* 빌드 박스 */
-
 .build-box {
   background: rgba(20, 20, 20, 0.9);
   border: 1px solid #2a2a2a;
   border-radius: 10px;
-
   padding: 24px;
   margin-bottom: 24px;
-
   backdrop-filter: blur(3px);
 }
 
 .build-box h2 {
   text-align: center;
-
   color: #c9a84c;
   font-size: 24px;
   font-weight: 800;
-
   margin-bottom: 20px;
   padding-bottom: 12px;
-
   border-bottom: 1px solid #2a2a2a;
 }
-
-/* 줄 */
 
 .build-row {
   display: flex;
   align-items: center;
   gap: 16px;
-
   margin-bottom: 18px;
 }
 
@@ -821,26 +715,20 @@ main ol li p {
   margin-bottom: 0;
 }
 
-/* 아이템 영역 */
-
 .icon-list {
   display: flex;
   gap: 10px;
 }
 
-/* 아이템 아이콘 */
-
-.icon-list img {
+/* 아이콘 이미지 설정 (호버 시 약간 상승 효과) */
+.icon-list img,
+.rune-icon {
   width: 64px;
   height: 64px;
-
   object-fit: cover;
-
   border: 1px solid #444;
   border-radius: 6px;
-
   background: #111;
-
   transition: all 0.2s ease;
 }
 
@@ -849,27 +737,9 @@ main ol li p {
   border-color: #c9a84c;
 }
 
-/* 룬 아이콘 */
-
-.rune-icon {
-  width: 64px;
-  height: 64px;
-
-  object-fit: cover;
-
-  border: 1px solid #444;
-  border-radius: 6px;
-
-  background: #111;
-
-  transition: all 0.2s ease;
-}
-
 .rune-icon:hover {
   border-color: #c9a84c;
 }
-
-/* 설명 텍스트 */
 
 .build-row span {
   color: #aaa;
@@ -878,64 +748,19 @@ main ol li p {
   letter-spacing: 0.05em;
 }
 
-/* 룬 줄 */
-
 .rune-row {
   display: flex;
   align-items: center;
   gap: 16px;
-
   margin-top: 10px;
 }
 
-/* 모바일 */
-
-@media (max-width: 768px) {
-  .build-box {
-    padding: 18px;
-  }
-
-  .icon-list {
-    flex-wrap: wrap;
-  }
-
-  .icon-list img,
-  .rune-icon {
-    width: 56px;
-    height: 56px;
-  }
-
-  .build-row {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-}
-/* =========================
-   LOGIN PAGE
-========================= */
-
-body {
-  margin: 0;
-  font-family: "Pretendard", sans-serif;
-}
-
-main {
-  min-height: 100vh;
-
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-
-  text-align: center;
-}
-
+/* 로그인 대기 / 소환사 이름 입력 페이지 */
 main h1 {
   color: #c9a84c;
   font-size: 64px;
   font-weight: 900;
   letter-spacing: 0.15em;
-
   margin-bottom: 12px;
 }
 
@@ -946,19 +771,13 @@ main p {
 
 #name-input {
   width: 320px;
-
   padding: 14px 18px;
-
   border: 1px solid #444;
   border-radius: 8px;
-
   background: rgba(20, 20, 20, 0.9);
   color: white;
-
   font-size: 16px;
-
   outline: none;
-
   transition: all 0.2s;
 }
 
@@ -969,22 +788,15 @@ main p {
 
 #enter-btn {
   margin-top: 16px;
-
   width: 360px;
-
   padding: 14px;
-
   border: none;
   border-radius: 8px;
-
   background: #c9a84c;
   color: #111;
-
   font-size: 16px;
   font-weight: 700;
-
   cursor: pointer;
-
   transition: all 0.2s;
 }
 
@@ -993,10 +805,10 @@ main p {
   background: #d9b85b;
 }
 
+/* 유효성 검사 오류 메시지 영역 */
 #error-msg {
   min-height: 24px;
   margin-top: 12px;
-
   color: #ff5a5a;
   font-size: 14px;
 }
