@@ -1,7 +1,7 @@
 /*팝업모달*/
 document.addEventListener("DOMContentLoaded", () => {
   const cards = document.querySelectorAll(".champ-card");
-  const overlay = document.getElementById("modal-wrap");
+  const overlay = document.l("modal-wrap");
   const modalName = document.getElementById("modal-name");
   const modalType = document.getElementById("modal-type");
   const modalDesc = document.getElementById("modal-desc");
